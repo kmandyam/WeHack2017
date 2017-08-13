@@ -1,30 +1,105 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta name="viewport" content="width=device-width">
-		<link rel="stylesheet" type="text/css" href="style.css"/>
-		<title>PredictHR</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" type="image/png" href="briefcase2.png" />
+    <!-- <script src="jquery-3.2.0.min.js"></script> -->
+    <link rel="stylesheet" type="text/css" href="flexboxgrid.min.css"/>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <!-- <script src="js/script.js" type="text/javascript"></script> -->
+    <!-- <script src="popup.js"></script> -->
+    <title>Predict HR</title>
 	</head>
 	<body>
 
-		<!-- <div class="row container_row landing">
+    <div class="loading_screen"></div>
+
+		<div class="row container_row navbar">
+			<div class="col-xs-2"></div>
+			<div class="col-xs-10">
+				<a href="wehack.html">
+					<div class="navbar_logo">
+						<img id="sm_newspaper" src="briefcase2.png"/>
+						<h1 id="title">Predict HR</h1>
+					</div>
+				</a>
+			</div>
+			<div class="col-xs-2"></div>
+		</div>
+
+		<div class="row container_row">
 			<div class="col-xs-1 col-md-2"></div>
-			<div class="col-xs-10 col-md-4 container intro_cont">
-				<div id="intro_slant"></div>
-				<div class="top">
-					<h2>Why do employees leave companies and what are the biggest causes for them leaving?</h2>
-					<p>
-						PredictHR trains a logistic regression model on an HR dataset and uses the model to predict whether or not an employee will leave the company given certain information
-					</p>
-					<a href="predict.html"><div class="button">Predictions</div></a>
-          <a href="viewmodel.html"><div class="button">View Model</div></a>
+			<div class="col-xs-10 col-md-8 container">
+				<h2>News Exposure Score (Desired 0% Neutral)</h2>
+				<div class="row overall_score">
+					<div class="col-xs-12">
+						<h3 id="finalscore">49%</h3>
+						<h2 id="exposure_title">Conservative</h2>
+					</div>
+				</div>
+
+				<div class="row bar">
+					<div class="col-xs-2">
+						100 </br> Liberal
+					</div>
+					<div class="col-xs-8">
+						<div class="result_spectrum">
+							<div class="ticker exposure_ticker">
+								<img class="triangle" src="images/triangle.png"/>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-2">
+						100 </br> Conservative
+					</div>
+				</div>
+				<div class="row bar">
+					<div class="col-xs-12">
+						0 </br> Neutral
+					</div>
+				</div>
+				<!-- <p>
+					Spectrum figures out how exposed you are to diverse political views by analyzing which political sites you have visited recently.
+				</p> -->
+			</div>
+			<div class="col-xs-1 col-md-2"></div>
+		</div>
+
+		<div class="row container_row">
+			<div class="col-xs-1 col-md-2"></div>
+			<div class="col-xs-10 col-md-8 container">
+				<h2>News Crediblity Score (Desired 100%)</h2>
+				<div class="row overall_score">
+					<div class="col-xs-12">
+						<h3 id="credibility">96%</h3>
+						<h2 id="credibility_title">Credible</h2>
+					</div>
+				</div>
+
+				<div class="row bar">
+					<div class="col-xs-2">
+						0 </br> Not Credible
+					</div>
+					<div class="col-xs-8">
+						<div class="result_spectrum">
+							<div class="ticker credibility_ticker">
+								<img class="triangle" src="images/triangle.png"/>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-2">
+						100 </br> Credible
+					</div>
 				</div>
 			</div>
-			<div class="col-xs-10 col-md-4 aylmao">
-				<img id="newspaper" src="images/newspaper.png"/>
-			</div>
 			<div class="col-xs-1 col-md-2"></div>
-		</div> -->
-
+		</div>
+    <div class="footer row">
+      <div class="col-xs-2"></div>
+      <div class="col-xs-8">
+        <div>Made with logistic regression and late night angst <3</div>
+      </div>
+      <div class="col-xs-2"></div>
+    </div>
 	</body>
 </html>
