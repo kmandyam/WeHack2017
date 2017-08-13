@@ -61,7 +61,6 @@ def train(data, epochs, rate, lam):
         for x in range(len(data)): # run through N times (where N is the number of items in our data)
             # pick a random point in the data
             point = random.choice(data)
-            # print point
             update(model, point, 0, rate, lam)
             # print model
 
@@ -75,9 +74,15 @@ def extract_features(raw):
         point['label'] = (r['left'] == '1')
 
         features = []
-        features.append(1.) # I think this is the weight??
-        features.append(r['satisfaction_level'])
-        features.append(float(r['last_evaluation']) > 0.5)
+        # features.append(1.) # I think this is the weight??
+        features.append(float(r['satisfaction_level']))
+        features.append(float(r['satisfaction_level']) < 0.5)
+        features.append(float(r['last_evaluation']) > 0.6 and float(r['last_evaluation']) < 0.8)
+        features.append(float(r['last_evaluation']))
+        features.append(float(r['number_project'])/float(r['time_spend_company']))
+        features.append(float(r['number_project']) < 2 or float(r['number_project']) > 5)
+        # features.append(r['salary'] == 'low')
+        # features.append(r['number_project'] < 3)
         # features.append(float(r['age'])/100)
         # features.append(float(r['education_num'])/20)
         # features.append(r['marital'] == 'Married-civ-spouse')

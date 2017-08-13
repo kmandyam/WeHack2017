@@ -9,8 +9,8 @@ with open('HR_comma_sep.csv', 'rb') as f:
 
 # split raw data into training and test data: 70% and 30% respectively
 def separate_data(raw):
-    train_data = raw[0:10500]
-    test_data = raw[10500:]
+    train_data = raw[0:7499]
+    test_data = raw[7499:]
     return train_data, test_data
 
 separate_data(data)
