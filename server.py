@@ -24,4 +24,5 @@ def load_trained_data():
     train_accuracy, test_accuracy = test_submission()
     return "Training Accuracy: " + str(train_accuracy) + ", Testing Accuracy: " + str(test_accuracy)
 
+
 app.run()
