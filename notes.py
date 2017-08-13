@@ -18,6 +18,6 @@ separate_data(data)
 #DONE: Sort through data
 #DONE: Github project
 #DONE: Separate the data into train and test sets
-#TODO: Write a classifier to determine whether or not a person will leave given some points
+#DONE: Write a classifier to determine whether or not a person will leave given some points
 #TODO: Write a front end that's pretty and easy to display
 #TASK: Given an employee, will they leave the company?
