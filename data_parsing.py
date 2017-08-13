@@ -13,9 +13,11 @@ def separate_data(raw):
     test_data = raw[10500:]
     return train_data, test_data
 
+separate_data(data)
+
 #DONE: Sort through data
 #DONE: Github project
 #DONE: Separate the data into train and test sets
 #TODO: Write a classifier to determine whether or not a person will leave given some points
 #TODO: Write a front end that's pretty and easy to display
-#TASK: Given an employee, and a time frame, will they leave the company within that timeframe?
+#TASK: Given an employee, will they leave the company?

@@ -72,26 +72,28 @@ def extract_features(raw):
     data = []
     for r in raw:
         point = {}
-        point["label"] = (r['income'] == '>50K')
+        point['label'] = (r['left'] == '1')
 
         features = []
-        features.append(1.)
-        features.append(float(r['age'])/100)
-        features.append(float(r['education_num'])/20)
-        features.append(r['marital'] == 'Married-civ-spouse')
+        features.append(1.) # I think this is the weight??
+        features.append(r['satisfaction_level'])
+        features.append(float(r['last_evaluation']) > 0.5)
+        # features.append(float(r['age'])/100)
+        # features.append(float(r['education_num'])/20)
+        # features.append(r['marital'] == 'Married-civ-spouse')
         #TODO: Add more feature extraction rules here!
-        features.append(r['type_employer'] == 'Never-worked')
-        features.append(r['type_employer'] == 'Without-pay')
-        features.append(r['relationship'] == 'Own-child')
-        features.append(float(r['hr_per_week'])/80)
-        features.append(r['occupation'] == 'Exec-managerial' or
-                        r['occupation'] == 'Prof-specialty' or
-                        r['occupation'] == 'Adm-clerical' or
-                        r['occupation'] == 'Sales' or
-                        r['occupation'] == 'Tech-support' or
-                        r['occupation'] == 'Armed-Forces')
-        features.append(r['capital_gain'] > 3000)
-        features.append(r['capital_loss'] > 0)
+        # features.append(r['type_employer'] == 'Never-worked')
+        # features.append(r['type_employer'] == 'Without-pay')
+        # features.append(r['relationship'] == 'Own-child')
+        # features.append(float(r['hr_per_week'])/80)
+        # features.append(r['occupation'] == 'Exec-managerial' or
+        #                 r['occupation'] == 'Prof-specialty' or
+        #                 r['occupation'] == 'Adm-clerical' or
+        #                 r['occupation'] == 'Sales' or
+        #                 r['occupation'] == 'Tech-support' or
+        #                 r['occupation'] == 'Armed-Forces')
+        # features.append(r['capital_gain'] > 3000)
+        # features.append(r['capital_loss'] > 0)
         point['features'] = features
         data.append(point)
     return data
