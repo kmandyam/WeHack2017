@@ -81,24 +81,10 @@ def extract_features(raw):
         features.append(float(r['last_evaluation']))
         features.append(float(r['number_project'])/float(r['time_spend_company']))
         features.append(float(r['number_project']) < 2 or float(r['number_project']) > 5)
-        # features.append(r['salary'] == 'low')
-        # features.append(r['number_project'] < 3)
-        # features.append(float(r['age'])/100)
-        # features.append(float(r['education_num'])/20)
-        # features.append(r['marital'] == 'Married-civ-spouse')
-        #TODO: Add more feature extraction rules here!
-        # features.append(r['type_employer'] == 'Never-worked')
-        # features.append(r['type_employer'] == 'Without-pay')
-        # features.append(r['relationship'] == 'Own-child')
-        # features.append(float(r['hr_per_week'])/80)
-        # features.append(r['occupation'] == 'Exec-managerial' or
-        #                 r['occupation'] == 'Prof-specialty' or
-        #                 r['occupation'] == 'Adm-clerical' or
-        #                 r['occupation'] == 'Sales' or
-        #                 r['occupation'] == 'Tech-support' or
-        #                 r['occupation'] == 'Armed-Forces')
-        # features.append(r['capital_gain'] > 3000)
-        # features.append(r['capital_loss'] > 0)
+        features.append(float(r['average_montly_hours']) < 150 or float(r['average_montly_hours']) > 250)
+        features.append(float(r['time_spend_company']) > 5)
+        features.append(r['salary'] == 'low')
+        
         point['features'] = features
         data.append(point)
     return data
