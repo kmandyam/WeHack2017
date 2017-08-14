@@ -27,16 +27,15 @@ def test_dot():
     d = dot([1.1,2,3.5], [-1,0.1,.08])
     self.assertAlmostEqual(d, -.62)
 
-def test_predict():
-    model = [1,2,1,0,1]
-    point = {'features':[.4,1,3,.01,.1], 'label': 1}
-    p = predict(model, point)
-    self.assertAlmostEqual(p, 0.995929862284)
-
 def test_accuracy():
     data = train_data
     a = accuracy(data, [0]*len(data))
-#     self.assertAlmostEqual(a, 0.751077514754)
+
+def return_train_data():
+    return train_data
+
+def return_test_data():
+    return test_data
 
 def test_submission():
     valid_data = test_data

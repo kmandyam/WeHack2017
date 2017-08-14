@@ -74,17 +74,15 @@ def extract_features(raw):
         point['label'] = (r['left'] == '1')
 
         features = []
-        # features.append(1.) # I think this is the weight??
-        features.append(float(r['satisfaction_level']))
         features.append(float(r['satisfaction_level']) < 0.5)
         features.append(float(r['last_evaluation']) > 0.6 and float(r['last_evaluation']) < 0.8)
-        features.append(float(r['last_evaluation']))
+        # features.append(float(r['last_evaluation']))
         features.append(float(r['number_project'])/float(r['time_spend_company']))
         features.append(float(r['number_project']) < 2 or float(r['number_project']) > 5)
         features.append(float(r['average_montly_hours']) < 150 or float(r['average_montly_hours']) > 250)
         features.append(float(r['time_spend_company']) > 5)
         features.append(r['salary'] == 'low')
-        
+
         point['features'] = features
         data.append(point)
     return data
